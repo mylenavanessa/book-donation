@@ -1,0 +1,36 @@
+.ant-modal-content {
+  border-radius: 10px !important;
+}
+
+.modalSingIn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalSingIn form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.modalSingIn form input + input {
+  margin-top: 40px;
+}
+
+.modalSingIn form button {
+  margin-top: 40px;
+}
+
+.SingInLink {
+  color: #41414d;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.SingInLink:hover {
+  opacity: 0.8;
+}

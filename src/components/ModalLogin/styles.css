@@ -1,0 +1,36 @@
+.ant-modal-content {
+  border-radius: 10px !important;
+}
+
+.modalLogin {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalLogin form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.modalLogin form input + input {
+  margin-top: 40px;
+}
+
+.modalLogin form button {
+  margin-top: 40px;
+}
+
+.loginLink {
+  color: #41414d;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.loginLink:hover {
+  opacity: 0.8;
+}

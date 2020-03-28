@@ -35,7 +35,7 @@ header img{
   text-decoration: overline;
  }
 
- .headerLinks button {
+ .headerLinks .signIn {
     width: 192px;
     height: 44.47px;
     background: #1BEBEF;
@@ -122,5 +122,9 @@ header img{
    background-color: #fff;
    margin-top: 80px;
    text-align: center;
+ }
+
+ .footer p { 
+   margin-top: 15px;
  }
  

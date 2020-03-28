@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import './styles.css'
 
-import vector from '../assets/vector.png'
-import arrowLeft from '../assets/arrow-left.png'
-import arrowRigth from '../assets/arrow-rigth.png'
-import bookHeart from '../assets/book-heart.png'
-import book from '../assets/book.png'
+import vector from '../../assets/vector.png'
+import arrowLeft from '../../assets/arrow-left.png'
+import arrowRigth from '../../assets/arrow-rigth.png'
+import bookHeart from '../../assets/book-heart.png'
+import book from '../../assets/book.png'
+
+import ModalLogin from '../../components/ModalLogin'
+import ModalSingIn from '../../components/ModalSingIn'
 
 
 export default function Home() {
+  const [modalLoginVisible, setModalLoginVisible] = useState(false)
+  const [modalSingInVisible, setModalSingInVisible] = useState(false) 
+
+  function handleToLogin () {
+    setModalSingInVisible(false)
+    setModalLoginVisible(true)
+  }
+
+  function handleToSingIn() {
+    setModalLoginVisible(false)
+    setModalSingInVisible(true)
+  }
+
+  function handleCloseModal() {
+    setModalLoginVisible(false)
+    setModalSingInVisible(false)
+  }
+
   return (
     <div className='homeContainer'>
       <header>
@@ -21,9 +42,9 @@ export default function Home() {
           <div className='headerLinks'>
             <Link to='/' className='headerLink'>Home</Link>
             <Link to='/profile' className='headerLink'>Sobre</Link>
-            <Link to='/profile' className='headerLink'>Entrar</Link>
+            <Link to='/' className='headerLink' onClick={handleToLogin}>Entrar</Link>
             
-            <button type='button' className='signIn'>Inscreva-se</button>
+            <button type='button' className='signIn' onClick={handleToSingIn}>Inscreva-se</button>
           </div>
         </div>
 
@@ -59,7 +80,20 @@ export default function Home() {
       </div>
       <div className='footer'>
           <p>Projeto de software II</p>
+          <p>Faculdade Nova Roma</p>
       </div>
+
+      <ModalLogin 
+        visible={modalLoginVisible}
+        handleToSingIn={handleToSingIn}
+        handleCloseModal={handleCloseModal}
+      />
+
+      <ModalSingIn
+        visible={modalSingInVisible}
+        handleToLogin={handleToLogin}
+        handleCloseModal={handleCloseModal}
+      />
     </div>
   );
 }
