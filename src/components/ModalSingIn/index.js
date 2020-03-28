@@ -20,15 +20,15 @@ export default function ModalSingIn({ visible, handleToLogin, handleCloseModal }
             />
             <input
               type="username" 
-              placeholder='senha'
+              placeholder='username'
             />
             <input
               type="password" 
               placeholder='senha'
             />
             <input
-              type="telefone" 
-              placeholder='senha'
+              type="tel" 
+              placeholder='telefone'
             />
 
             <button className='button' type='submit'>Cadastrar</button>
