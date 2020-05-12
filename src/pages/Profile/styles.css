@@ -1,0 +1,124 @@
+.profileContainer{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.profileContainer header {
+  width: 100%;
+  height: 400px;
+}
+
+.profileContainer .headerProfile{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.headerTitles {
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ .headerLinks a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+ }
+
+ .headerLinks a:hover{
+  text-decoration: overline;
+ }
+
+.toRigth {
+  display: flex;
+}
+
+/* .donate {
+  display: flex;
+} */
+
+.donate {
+  width: 100%;
+  max-width: 130px;
+  height: 35px;
+  background: #1BEBEF;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 700;
+  /* margin-top: 16px; */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 35px;
+  transition: filter 0.2s;
+}
+
+.donate:hover {
+  filter: brightness(90%);
+}
+
+.donate img {
+  margin-right: 15px;
+}
+
+.profileEdit {
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  left: 25%;
+  margin-right: -75%;
+  transform: translate(-25%, 0%);
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 130px;
+}
+
+.avatar .edit {
+  width: 100%;
+  max-width: 70px;
+  height: 20px;
+  background: #1BEBEF;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 0 10px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  transition: filter 0.2s;
+}
+
+.avatar .edit:hover {
+  filter: brightness(90%);
+}
+
+.userInformations {
+  margin-left: 50px;
+}
+
+.userInformations div + div{
+  margin-top: 10px;
+}
+
+.userInformations span {
+  font-weight: 700;
+  font-size: 14px;
+}

@@ -1,7 +1,10 @@
 import React from 'react';
-import {Modal, Button} from 'antd'
+import {Modal, Button, Select} from 'antd'
 
-import './styles.css'
+import './styles.css';
+
+const { Option } = Select;
+
 
 export default function ModalSingIn({ visible, handleToLogin, handleCloseModal }) {
   return (
@@ -30,7 +33,28 @@ export default function ModalSingIn({ visible, handleToLogin, handleCloseModal }
               type="tel" 
               placeholder='telefone'
             />
-
+            <div className="containerSelect">
+            <Select 
+              showSearch
+              size="large" 
+              bordered={false} 
+              placeholder='estado'
+              className="selectLocation" 
+            >
+              <Option value='PE'>Pernambuco</Option>
+            </Select>
+            </div>
+            <div className="containerSelect">
+            <Select 
+              showSearch
+              size="large" 
+              bordered={false} 
+              placeholder='cidade'
+              className="selectLocation" 
+            >
+              <Option value='Recife'>Recife</Option>
+            </Select>
+            </div>
             <button className='button' type='submit'>Cadastrar</button>
           </form>
 
