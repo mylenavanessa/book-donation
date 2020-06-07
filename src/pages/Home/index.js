@@ -11,10 +11,13 @@ import book from '../../assets/book.png'
 import ModalLogin from '../../components/ModalLogin'
 import ModalSingIn from '../../components/ModalSingIn'
 
+import api from '../../services/api'
 
 export default function Home() {
   const [modalLoginVisible, setModalLoginVisible] = useState(false)
   const [modalSingInVisible, setModalSingInVisible] = useState(false) 
+  const [loadingLogin, setLoadingLogin] = useState(false)
+  const [loadingSingIn, setLoadingSingIn] = useState(false)
 
   function handleToLogin () {
     setModalSingInVisible(false)
@@ -29,6 +32,47 @@ export default function Home() {
   function handleCloseModal() {
     setModalLoginVisible(false)
     setModalSingInVisible(false)
+  }
+
+  async function submitLogin(data) {
+    console.log(data)
+    setLoadingLogin(true)
+    try {
+      const response = await api.post('auth', data)
+
+      localStorage.setItem('token', response.data.token.token)
+      localStorage.setItem('userId', String(response.data.user.id))
+      localStorage.setItem('nameUser', String(response.data.user.name))
+      localStorage.setItem('credits', String(response.data.user.credits))
+      
+      console.log(response)
+
+      setModalLoginVisible(false)
+      console.log('login efetuado')
+      setLoadingLogin(false)
+
+      return true
+    }catch{
+      console.log('Erro, verifique seu email e senha')
+      setLoadingLogin(false)
+      return false
+    }
+  }
+
+  async function submitSingIn(data){
+    console.log(data)
+    setLoadingSingIn(true)
+    try {
+      await api.post('/register', data)
+      console.log('Registro realizado com sucesso!')
+      handleToLogin()
+      setLoadingSingIn(false)
+      return true
+    }catch(e){
+      console.log('Erro ao registrar usuário, tente novamente')
+      setLoadingSingIn(false)
+      return false
+    }
   }
 
   return (
@@ -87,12 +131,16 @@ export default function Home() {
         visible={modalLoginVisible}
         handleToSingIn={handleToSingIn}
         handleCloseModal={handleCloseModal}
+        submitLogin={submitLogin}
+        loadingLogin={loadingLogin}
       />
 
       <ModalSingIn
         visible={modalSingInVisible}
         handleToLogin={handleToLogin}
         handleCloseModal={handleCloseModal}
+        submitSingIn={submitSingIn}
+        loadingSingIn={loadingSingIn}
       />
     </div>
   );
