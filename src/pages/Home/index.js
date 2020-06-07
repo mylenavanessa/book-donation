@@ -35,7 +35,6 @@ export default function Home() {
   }
 
   async function submitLogin(data) {
-    console.log(data)
     setLoadingLogin(true)
     try {
       const response = await api.post('auth', data)
@@ -60,7 +59,6 @@ export default function Home() {
   }
 
   async function submitSingIn(data){
-    console.log(data)
     setLoadingSingIn(true)
     try {
       await api.post('/register', data)
