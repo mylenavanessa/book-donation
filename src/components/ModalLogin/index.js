@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Modal, Button, Spin} from 'antd'
 import { LoadingOutlined } from '@ant-design/icons';
+import { useHistory } from "react-router-dom";
 
 import './styles.css'
 
@@ -8,6 +9,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 18 }} spin />;
 export default function ModalLogin({ visible, handleToSingIn, handleCloseModal, submitLogin, loadingLogin }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  let history = useHistory();
 
   async function handleLogin(e){
     e.preventDefault();
@@ -15,6 +17,7 @@ export default function ModalLogin({ visible, handleToSingIn, handleCloseModal, 
     if(res){
       setEmail('')
       setPassword('')
+      history.push("/dashboard");
     }
   }
 
