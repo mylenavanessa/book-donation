@@ -239,14 +239,14 @@ function Dashboard() {
   return (
     <>
       <header>
-        <img src={vector} alt='cabeça'/>
+        <img src={vector} alt='cabeça' style={{width: '100%', height: 450}}/>
         
         <div className='headerTitles'>
           <div className={"logo"}>
             <img src={book} alt={'logo'} width={60} height={60}/> 
             <span>Books Donations</span>
           </div>
-          <div className={"headerLinks"}>
+          <div className="headerLinks">
             <Link to='/' className='headerLink'>Home</Link>
             <Link to='/dashboard' className='headerLink'>Dashboard</Link>
             <Link to='/profile' className='headerLink'>Sobre</Link>
