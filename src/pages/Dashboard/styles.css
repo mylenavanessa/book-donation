@@ -1,0 +1,26 @@
+.logo {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.headerTitles {
+  position: absolute;
+  width: 100%;
+  top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.headerLinks a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #000;
+}
+
+.headerLinks a:hover{
+text-decoration: overline;
+}
